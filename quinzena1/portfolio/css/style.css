@@ -97,47 +97,125 @@ header {
     opacity: 0.7;
 } 
 
-img {
-    width: 180px;
-    height: 194px;
-    border-radius: 50%;
+.txtCapa{
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 60px;
 }
+
+.foto{
+    height: 200px;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.foto img {
+    width: 270px;
+    height: 294px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 90px rgb(149, 29, 160);
+}
+
+.titulo {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* ------------------QUEM SOU EU ------------------ */
 
 .quem-sou {
-    height: 900px;
+    height: 600px;
     background-image: url(../img/quem-sou-fundo.jpg);
-    display: flex;
-    
+    display: flex;   
 }
 
-.hello {
-    width:50%;
-    height: 850px;
-    /* background-color: #fff; */
-    color: #fff;
-    display: flex;
-    
-}
 
-.apresentacao{
-    width: 50%;
-    height: 850px;
-    display: flex;
-    /* background-color: yellow; */
-}
+/* ------------------ FORMAÇÃO ------------------ */
 
 .apresentacao p {
     color: #fff;
-    font-size: 15px;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
+.quem-sou li {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.quem-sou ul{
+    text-align: center;
+}
+
+/* ------------------ PORTIFOLIO ------------------ */
 
 .portfolio {
-    height: 900px;
-    background-color: gray;
+    background-image: url(../img/quem-sou-fundo.jpg);
+    height: 600px;
+    justify-content: center;
+    align-items: center;
 }
+
+.portfolio p {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.portfolio img {
+    width: 400px;
+    height: 250px;
+    margin-left: 90px;
+    align-items: center;
+    justify-content: center;
+}
+
+#formacao {
+    margin-top: 180px;
+}
+
+/* ------------------ CONTATO ------------------ */
 
 .contato {
     height: 500px;
-    background-color: black;
+    background-image: linear-gradient(rgb(41, 39, 40), black);
+    align-items: center;
+    justify-content: center;
+}
+
+.contato img{
+    width: 30px;
+}
+
+.contato p {
+    color: #fff;
+}
+
+/* ------------------ CONTATO - FORMULARIO ------------------ */
+
+.formulario {
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario label {
+    color: #fff;
+}
+
+.formulario input {
+    width: 400px;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.formulario textarea {
+    width: 400px;
+    height: 50px;
+    margin-top: 18px;
 }
