@@ -73,6 +73,15 @@ div>p:first-child {
     width: 19px;
 }
 
+.icone:hover {
+    opacity: 40%;
+}
+
+.icone:active {
+    opacity: 100%;
+}
+
+
 
 /** 
   *
