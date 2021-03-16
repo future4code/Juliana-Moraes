@@ -33,9 +33,6 @@ div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
-}
 
 .espaco-topo {
     padding-top: 60px;
@@ -60,7 +57,8 @@ div img {
 }
 
 .icone {
-    height: 15px;
+    height: 19px;
+    width: 19px;
 }
 
 
