@@ -1,0 +1,221 @@
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input,textarea,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------- Inicio do css da pagina ------------- */
+
+header {
+    background-image: url(../img/fundo-principal.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+}
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.home {
+    width: 100%;
+    height: 1080px;
+}
+.menu {
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0 auto;
+}
+
+.menu li{
+    display: inline;
+    margin-left: 40px;
+    
+ 
+}
+
+.menu a {
+    color: rgb(189, 186, 186);
+    text-decoration: none;
+    font-size: 19px;
+    padding: 10px 10px;
+}
+
+.menu a:hover{
+    background-color: rgb(174, 153, 197);
+    color: black;
+    transition: all 600ms ease-in;
+    border-radius: 4px;
+    opacity: 0.7;
+} 
+
+.txtCapa{
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 60px;
+}
+
+.foto{
+    height: 200px;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.foto img {
+    width: 270px;
+    height: 294px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 90px rgb(149, 29, 160);
+}
+
+.titulo {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* ------------------QUEM SOU EU ------------------ */
+
+.quem-sou {
+    height: 600px;
+    background-image: url(../img/quem-sou-fundo.jpg);
+    display: flex;   
+}
+
+
+/* ------------------ FORMAÇÃO ------------------ */
+
+.apresentacao p {
+    color: #fff;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.quem-sou li {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.quem-sou ul{
+    text-align: center;
+}
+
+/* ------------------ PORTIFOLIO ------------------ */
+
+.portfolio {
+    background-image: url(../img/quem-sou-fundo.jpg);
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio p {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+.portfolio img {
+    width: 400px;
+    height: 250px;
+    margin-left: 90px;
+    align-items: center;
+    justify-content: center;
+}
+
+#formacao {
+    margin-top: 180px;
+}
+
+/* ------------------ CONTATO ------------------ */
+
+.contato {
+    height: 500px;
+    background-image: linear-gradient(rgb(41, 39, 40), black);
+    align-items: center;
+    justify-content: center;
+}
+
+.contato img{
+    width: 30px;
+}
+
+.contato p {
+    color: #fff;
+}
+
+/* ------------------ CONTATO - FORMULARIO ------------------ */
+
+.formulario {
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario label {
+    color: #fff;
+}
+
+.formulario input {
+    width: 400px;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.formulario textarea {
+    width: 400px;
+    height: 50px;
+    margin-top: 18px;
+}

@@ -1,0 +1,243 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+html, body, div, img, ul, li, h1, section{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: "Open Sans", sans-serif;
+}
+.topo{
+  background-color: rgb(205, 77, 0);
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.corFundo{
+   background-color: rgb(88, 94, 149);
+}
+
+.principalLabenu{
+  height: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.principalLabenu img{
+  height: 110px;
+}
+
+.principalModalidade{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+.container-modalidade{
+  display: flex;
+  height: 225px;
+  width: 500px;
+}
+
+.modalidade{
+  height: 110px;
+  width: 145px;
+  margin: 0 auto;
+  text-align: center; 
+} 
+
+.texto{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+}
+.cor-moble{
+  background-color: rgb(148, 196, 125);
+}
+
+.cor-data{
+  background-color: rgb(224, 102, 102);
+}
+
+.cor-web{
+  background-color: rgb(109, 158, 235);
+}
+
+.turma{
+  height: 25px;
+  display: flex;
+  justify-content: flex-end;
+  color: #fff;
+  font-weight: 600;
+  padding-right: 20px;
+}
+
+footer{
+  background-color: rgb(216, 216, 216);
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  width: 360px;
+  height: 30px;
+  border-color: rgb(193, 193, 193);
+ }
+
+button{
+  width: 65px;
+  height: 36px;
+  background-color: rgb(205, 77, 0);
+  color: #fff;
+  border-color: rgb(193, 193, 193);
+}
+
+
+@media screen and (max-width: 980px){
+
+.topo{
+  height: 110px;
+  font-size: 50px;
+}
+
+.principalLabenu img{
+  height: 290px;
+}
+
+.principalLabenu{
+  height: 490px;
+  display: flex;
+  justify-content: center;
+}
+
+.principalModalidade{
+  height: 800px;
+}
+
+.container-modalidade{
+  display: flex;
+  flex-wrap: wrap;
+  height: 800px;
+  width: 100%;
+}
+
+.modalidade{
+  height: 310px;
+  width: 327px;
+}
+
+.texto{
+  font-size: 60px;
+}
+  
+footer{
+  height: 230px;
+ 
+}
+
+input{
+  width: 460px;
+  height: 60px;
+  font-size: 22px;
+  margin-top: 60px
+ }
+ 
+button{
+  width: 95px;
+  height: 66px;
+  font-size: 18px;
+}
+
+.turma{
+  font-size: 25px;
+  height: 35px;
+}
+}
+
+@media screen and (max-width: 768px){
+
+.topo{
+  height: 90px;
+  font-size: 30px;
+}
+
+.principalLabenu img{
+  height: 150px;
+}
+
+.principalLabenu{
+  height: 490px;
+}
+
+.modalidade{
+  height: 230px;
+  width: 250px;
+}
+
+.texto{
+  font-size: 45px;
+}
+
+button{
+  width: 85px;
+  height: 66px;
+  font-size: 18px;
+}
+
+.turma{
+  font-size: 22px;
+}
+}
+
+@media screen and (max-width: 480px){
+
+.topo{
+  height: 90px;
+  font-size: 22px;
+}
+
+.principalLabenu img{
+  height: 110px;
+}
+
+.modalidade{
+  height: 200px;
+  width: 210px;
+}
+
+.texto{
+  font-size: 38px;
+}
+
+input{
+  width: 260px;
+  font-size: 17px;
+  margin-top: 60px;
+  display: block;
+ }
+ 
+button{
+  width: 100px;
+  font-size: 18px;
+}
+
+}
+
+@media screen and (max-width: 320px){
+  
+  .principalLabenu img{
+  height: 90px;
+ 
+}
+}
+
