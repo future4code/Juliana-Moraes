@@ -1,0 +1,175 @@
+/* level1 */
+#pond {
+    display: flex;
+  justify-content: flex-end;
+  }
+
+/* level2 */
+#pond {
+    display: flex;
+  justify-content: center;
+  }
+
+/* level3 */
+#pond {
+    display: flex;
+  justify-content: space-around;
+  }
+
+/* level4 */
+#pond {
+    display: flex;
+  justify-content: space-between;
+  }
+
+/* level5 */
+#pond {
+    display: flex;
+  align-items: flex-end;
+  }
+
+/* level6 */
+#pond {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+/* level7 */
+#pond {
+    display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  }
+
+/* level8 */
+#pond {
+    display: flex;
+  flex-direction: row-reverse;
+  }
+
+/* level9 */
+#pond {
+    display: flex;
+  flex-direction:column;
+  }
+
+/* level10 */
+#pond {
+    display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  }
+
+/* level11 */
+#pond {
+    display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  }
+
+/* level12 */
+#pond {
+    display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  }
+
+/* level13 */
+#pond {
+    display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  }
+
+/* level14 */
+#pond {
+    display: flex;
+  }
+  
+  .yellow {
+  order: 1;
+  }
+
+/* level15 */
+#pond {
+    display: flex;
+  }
+  
+  .red {
+  order: -1;
+  }
+
+/* level16 */
+#pond {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .yellow {
+  align-self: flex-end;
+  }
+
+/* level17 */
+#pond {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .yellow {
+  order: 2;
+  align-self: flex-end;
+  }
+
+/* level18 */
+#pond {
+    display: flex;
+  flex-wrap: wrap;
+  }
+
+/* level19 */
+  #pond {
+    display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  }
+
+/* level20 */
+  #pond {
+    display: flex;
+  flex-flow: column wrap;
+  }
+
+/* level21 */
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  align-content: flex-start;
+  }
+
+
+/* level22 */
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  align-content: flex-end;
+  }
+
+/* level23 */
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  flex-direction: column-reverse;
+  align-content: center;
+  }
+
+/* level24 */
+  #pond {
+    display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: column-reverse;
+  align-content: space-between;
+  justify-content: center;
+  }
+
