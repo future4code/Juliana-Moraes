@@ -1,0 +1,123 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    border: 1px solid black;
+}
+
+.alinhamento {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#main-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    
+    
+}
+
+.margin {
+    margin: 1vh;
+}
+
+#first-block {
+    background-color: red;
+    grid-column:1/7;
+    height: 15vh;
+   
+}
+
+.blue-block {
+    background-color: blue;
+    grid-column: 1/3;
+    height: 15vh;
+ 
+}
+
+.yellow-block {
+    background-color: yellow;
+    grid-column: 3/5;
+    
+}
+
+.green-block {
+    background-color: green;
+    grid-column: 5/7;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    height: 30vh;
+}
+
+.black-sete {
+    grid-column: 1/4;
+}
+
+.black-oito {
+    grid-column: 4/7;
+}
+
+
+.white-block {
+    background-color: white;
+    height: 15vh;
+}
+
+.white-nove {
+    grid-column: 1/3;
+}
+
+.white-dez {
+    grid-column: 3/5;
+}
+
+.white-onze {
+    grid-column: 5/7;
+}
+
+/*----------------------------------------------
+Media Queries
+----------------------------------------------*/
+
+
+/*Para Dispositivos de 768px ou menos*/
+@media screen and (max-width: 768px){
+	.blue-block, .white-nove {
+        grid-column: 1/4;
+        height: 15vh;
+    }
+
+    .yellow-block, .white-dez {
+        grid-column: 4/7;
+        height: 15vh;
+    }
+
+    .green-block, .white-onze {
+        grid-column: 1/7;
+        height: 15vh;
+    }
+	
+}
+
+
+/*Para Dispositivos de 480px ou menos*/
+@media screen and (max-width: 480px){	
+    
+    .blue-block, .yellow-block, .green-block, .black-block, .black-oito, .white-nove, .white-dez, .white-onze {
+        grid-column: 1/7;
+        height: 10vh;
+     
+    }
+			
+}
