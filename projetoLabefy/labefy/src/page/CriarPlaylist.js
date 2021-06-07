@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const CardCriarPlaylist = styled.div`
-    border: 1px solid white;
     width: 50%;
     height: 50vh;
     margin: 0 auto;
@@ -32,6 +32,7 @@ const CardCriarPlaylist = styled.div`
 
     h2, h3 {
         margin-bottom: 8%;
+        font-weight: lighter;
     }
 
     button {
@@ -48,22 +49,53 @@ const CardCriarPlaylist = styled.div`
     }
 `
 
-
 export default class CriarPlaylist extends React.Component {
 
+    state = {
+        nomePlaylist: ''
+    }
 
+
+    capturaNomePlaylist = (event) => {
+        this.setState({nomePlaylist: event.target.value})
+    }
+
+    cadastraPlaylist = () => {
+        const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
+        const body = {
+            name: this.state.nomePlaylist
+        }
+        
+        axios.post(url, body, {
+            headers: {
+                Authorization: 'juliana-moraes'
+            }
+        })
+        .then( (resp) => {
+            alert('Nova Playlist Adicionada!');
+            this.setState({nomePlaylist:''})
+            console.log(resp)
+        })
+        .catch( (erro) => {
+            alert('Erro ao adicionar a Playlist');
+        })
+    }
+    
 
     render() {
         return (
             <div>
 
-                <button onClick={this.props.propsTrocarEstadoPagina}>Ir Lista Playlist</button>
+                <button onClick={this.props.propsTrocarEstadoPagina}>Suas Playlists</button>
 
                 <CardCriarPlaylist>
                     <h2>Criar Playlist</h2>
-                    <h3>Nome Playlist</h3>
-                    <input placeholder={'Nome da Playlist'}></input>
-                    <button>Criar</button>
+                    <input 
+                        placeholder={'Nome da Playlist'}
+                        value={this.state.nomePlaylist}
+                        onChange={this.capturaNomePlaylist}
+                    />
+                    <button onClick={this.cadastraPlaylist}>Criar</button>
                 </CardCriarPlaylist>
 
             </div>

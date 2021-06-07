@@ -4,10 +4,11 @@ import Topo from './components/Topo.js'
 import ListaPlaylist from './page/ListaPlaylist.js'
 import CriarPlaylist from './page/CriarPlaylist.js'
 
+
 export default class App extends React.Component {
 
   state = {
-    pagina: 'criarPlaylist'
+    pagina: 'criarPagina'
   }
 
   trocarEstadoPagina = () => {
@@ -22,7 +23,7 @@ export default class App extends React.Component {
 
     const RenderizarTrocarPagina = () => {
       if (this.state.pagina === 'criarPlaylist') {
-        return <ListaPlaylist propsTrocarEstadoPagina={this.trocarEstadoPagina} />
+        return <CriarPlaylist propsTrocarEstadoPagina={this.trocarEstadoPagina} />
       } else if (this.state.pagina === 'listaPlaylist') {
         return <ListaPlaylist propsTrocarEstadoPagina={this.trocarEstadoPagina} />
       } else {
