@@ -1,35 +1,32 @@
-import axios from 'axios';
+//import axios from 'axios';
 import React from 'react'
-import { useState } from 'react'
 import { Login } from '../css/GlobalStyled.js'
+import useForm from '../hooks/useForm.js'
 
 export const LoginPage = () => {
 
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-
-    const onChangeEmail = (event) => {
-        setEmail(event.target.value);
-    };
-
-    const onChangeSenha = (event) => {
-        setSenha(event.target.value);
-    };
+    const { form, onChange, cleanFields } = useForm({
+        email: '',
+        senha: '',
+    });
 
     const submitLogin = (event) => {
-        console.log(email, senha);
+        event.prevenDefault();
+        console.log("Formulário enviado!", form);
+        cleanFields();
 
-        const body = {
-            email: email,
-            password: senha
-        }
 
-        axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/juliana-moraes/login', body)
-        .then((resp) => {
-            console.log(resp.data);
-        }).catch((erro) => {
-            console.log('Deu errado', erro.response)
-        })
+        // const body = {
+        //     email: email,
+        //     password: senha
+        // }
+
+        // axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/juliana-moraes/login', body)
+        // .then((resp) => {
+        //     console.log(resp.data);
+        // }).catch((erro) => {
+        //     console.log('Deu errado', erro.response)
+        // })
 
 
     };
@@ -37,18 +34,23 @@ export const LoginPage = () => {
 
     return (
         <Login>
+            <form onSubmit={submitLogin}>
             <input
-                placeholder='Login'
-                type='email'
-                value={email}
-                onChange={onChangeEmail}
+                name={'email'}
+                placeholder='Email'
+                type={'email'}
+                value={form.email}
+                onChange={onChange}
+                required
             />
 
             <input
+                name={'senha'}
                 placeholder='Senha'
-                type='password'
-                value={senha}
-                onChange={onChangeSenha}
+                type={'password'}
+                value={form.senha}
+                onChange={onChange}
+                required
             />
 
             <div>
@@ -56,7 +58,9 @@ export const LoginPage = () => {
                 <button onClick={submitLogin}>Entrar</button>
             </div>
 
-        </Login>
-    )
+            </form>
 
-}
+        </Login>
+    );
+
+};
