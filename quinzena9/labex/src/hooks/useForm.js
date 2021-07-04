@@ -6,7 +6,7 @@ const useForm = (initialState) => {
 
     const onChange = (event) => {
         const { name, value } = event.target; //desentruturação
-        setForm({ ...form, [name]: value }); //value do input referente ao name
+        setForm({ ...form, [event.target.name]: event.target.value }); //value do input referente ao name
     }
 
     const cleanFields = () => {

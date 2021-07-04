@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 
 export const HomePage = () => {
 
-    const history = useHistory()
+    const history = useHistory();
 
     const irParaLogin = () => {
         history.push('/login')

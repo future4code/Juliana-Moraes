@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import ImgFundo from '../img/background-home.jpg'
 
+
 export const Home = styled.div`
     width: 100vw;
     height: 100vh;
@@ -43,7 +44,7 @@ export const ListTrip = styled.div`
    
 `
 
-export const Login = styled.div`
+export const Login = styled.form`
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -71,5 +72,14 @@ export const Login = styled.div`
         margin-right: 2em;
     }
     
+`
+
+export const inscricao = styled.div`
+    width: 100vw;
+    height: 100vh;
+
+    input {
+        border: 2px solid pink;
+    }
 `
 

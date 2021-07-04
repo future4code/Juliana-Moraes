@@ -1,66 +1,172 @@
-//import axios from 'axios';
-import React from 'react'
-import { Login } from '../css/GlobalStyled.js'
-import useForm from '../hooks/useForm.js'
+//import { Login } from '../css/GlobalStyled.js'
+import { useState } from 'react';
+import axios from 'axios';
+import { useHistory } from 'react-router';
+
 
 export const LoginPage = () => {
 
-    const { form, onChange, cleanFields } = useForm({
-        email: '',
-        senha: '',
-    });
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
-    const submitLogin = (event) => {
-        event.prevenDefault();
-        console.log("Formulário enviado!", form);
-        cleanFields();
+    const history = useHistory();
 
-
-        // const body = {
-        //     email: email,
-        //     password: senha
-        // }
-
-        // axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/juliana-moraes/login', body)
-        // .then((resp) => {
-        //     console.log(resp.data);
-        // }).catch((erro) => {
-        //     console.log('Deu errado', erro.response)
-        // })
-
-
+    const onChangeEmail = (event) => {
+        setEmail(event.target.value);
     };
 
+    const onChangeSenha = (event) => {
+        setSenha(event.target.value);
+    };
+
+    const irParaAdmList = () => {
+        return history.push('/admin/trips/list')
+    }
+
+    const submitLogin = () => {
+        console.log(email, senha);
+        const body = {
+            email: email,
+            password: senha
+        }
+        axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/juliana-moraes/login', body)
+
+            .then((response) => {
+                console.log('correto', response.data.token)
+                localStorage.setItem('token', response.data.token);
+                irParaAdmList();
+            })
+
+            .catch((erro) => {
+                console.log(erro.response)
+            })
+    }
 
     return (
-        <Login>
-            <form onSubmit={submitLogin}>
+        <div>
+
             <input
                 name={'email'}
-                placeholder='Email'
-                type={'email'}
-                value={form.email}
-                onChange={onChange}
+                value={email}
+                onChange={onChangeEmail}
+                placeholder='E-mail'
                 required
+                type={'email'}
             />
 
             <input
                 name={'senha'}
+                value={senha}
+                onChange={onChangeSenha}
                 placeholder='Senha'
-                type={'password'}
-                value={form.senha}
-                onChange={onChange}
                 required
+                type={'password'}
+
             />
 
-            <div>
-                <button>Voltar</button>
-                <button onClick={submitLogin}>Entrar</button>
-            </div>
+            <button>Voltar</button>
+            <button onClick={submitLogin}>Entrar</button>
 
-            </form>
 
-        </Login>
-    );
+        </div>
+    )
+}
 
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export const LoginPage = () => {
+
+//     const { form, onChange, cleanFields } = useForm({
+//         email: '',
+//         senha: '',
+//     });
+
+//     const submitLogin = (event) => {
+//         event.prevenDefault();
+//         console.log("Formulário enviado!", form);
+//         cleanFields();
+
+//     };
+
+
+//     return (
+//         <Login onSubmit={submitLogin}>
+
+//                 <input
+//                     name={'email'}
+//                     value={form.email}
+//                     onChange={onChange}
+//                     placeholder='E-mail'
+//                     required
+//                     type={'email'}
+//                 />
+
+//                 <input
+//                     name={'senha'}
+//                     value={form.senha}
+//                     onChange={onChange}
+//                     placeholder='Senha'
+//                     required
+//                     type={'password'}
+
+//                 />
+
+//                     <button>Voltar</button>
+//                     <button>Entrar</button>
+
+
+
+
+//         </Login>
+//     );
+
+// };
