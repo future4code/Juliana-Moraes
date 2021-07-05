@@ -5,15 +5,15 @@ const useForm = (initialState) => {
     const [form, setForm] = useState(initialState);
 
     const onChange = (event) => {
-        const { name, value } = event.target; //desentruturação
-        setForm({ ...form, [event.target.name]: event.target.value }); //value do input referente ao name
-    }
-
-    const cleanFields = () => {
-        setForm(initialState);
+        const {name, value} = event.target
+        setForm({...form, [name]: value })
     };
 
-    return { form, onChange, cleanFields };
-};
+    const cleanFields = () => {
+        setForm(initialState)
+    }
+
+    return { form, onChange, cleanFields }
+}
 
 export default useForm;

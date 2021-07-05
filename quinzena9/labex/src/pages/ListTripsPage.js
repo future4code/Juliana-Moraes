@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom';
-//import { ListTrip } from '../css/GlobalStyled.js'
 
 export const ListTripsPage = () => {
 
@@ -13,9 +12,8 @@ export const ListTripsPage = () => {
             .then((resp) => {
                 setLista(resp.data.trips);
                 const lista = (resp.data.trips);
-                console.log(lista)
-            }).catch((erro) => {
-                console.log(erro.resp)
+            
+                
             })
     }, []);
 
@@ -25,7 +23,7 @@ export const ListTripsPage = () => {
 
     return (
 
-        // <ListTrip>
+        
         <div>
             {lista.map((lista) => {
                 return (
@@ -40,8 +38,6 @@ export const ListTripsPage = () => {
             <p>Lista viagens</p>
 
         </div>
-
-        //</ListTrip>
 
     )
 

@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
 import { useProtectPage } from '../hooks/useProtectPage.js';
 
 
@@ -8,8 +7,6 @@ import { useProtectPage } from '../hooks/useProtectPage.js';
 export const TripDetalisPage = () => {
 
     useProtectPage();
-
-    const pathParams = useParams();
     
     const [detalhe, setDetalhe] = useState({});
 
@@ -21,7 +18,7 @@ export const TripDetalisPage = () => {
             headers: {
                 auth: token
             }
-        }) //a ultima parte é o {:id} da viagem que vai vir do paht do router, quando o usuário escolhe a viagem
+        })
 
             .then((response) => {
                 console.log('deu certo', response)
@@ -38,17 +35,11 @@ export const TripDetalisPage = () => {
     return (
         <div>
             <p>Detalhes da viagem</p>
-            
-            {detalhe.map((detalhe) => {
-                return ( <div key={detalhe.id}> <li>Nome: {detalhe.name}</li>
+                    <li>Nome: {detalhe.name}</li>
                     <li>Descrição: {detalhe.description}</li>
                     <li>Paneta: {detalhe.planet}</li>
                     <li>Duarção da viagem: {detalhe.durationInDays} dias</li>
-                    <li>Data: {detalhe.date}</li>
-                    </div> 
-                )
-            })}
-            
+                    <li>Data: {detalhe.date}</li>            
         </div>
     )
 

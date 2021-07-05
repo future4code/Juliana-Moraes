@@ -1,110 +1,80 @@
 import React from 'react'
-import { useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import useForm from '../hooks/useForm';
 
 
 export const ApplicationFormPage = () => {
 
-    const [nome, setNome] = useState('');
-    const [idade, setIdade] = useState('');
-    const [motivo, setMotivo] = useState('');
-    const [profissao, setProfissao] = useState('');
-    const [pais, setPais] = useState('');
-
-    const onChangeNome = (event) => {
-        setNome(event.target.value);
-    };
-
-    const onChangeIdade = (event) => {
-        setIdade(event.target.value);
-    };
-
-    const onChangeMotivo = (event) => {
-        setMotivo(event.target.value)
-    };
-
-    const onChangeProfissao = (event) => {
-        setProfissao(event.target.value)
-    }
-
-    const onChangePais = (event) => {
-        setPais(event.target.value)
-    }
-
+    const { form, onChange, cleanFields } = useForm({ name: '', age: '', applicationText: '', profission: '', country: '' })
     const pathParams = useParams();
+    
+    const submitForm = (event) => {
+        event.preventDefault()
+        console.log(form)
+        
+        const body = {...form, age: Number(form.age)}
+        console.log(body)
 
-    const submitForm = () => {
-        console.log(nome, idade, motivo, profissao, pais)
-        const body = {
-            name: nome,
-            age: Number(idade),
-            application: motivo,
-            profession: profissao,
-            contry: pais
-        }
         axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/juliana-moraes/trips/${pathParams.id}/apply`, body)
-            console.log('foi')
-
+            
             .then((response) => {
-                console.log('correto', response)
-                //window.alert('foi')
+                window.alert('Formulario Enviado')
+                
+            }).catch((erro) => {
+                window.alert('Erro no envio')
             })
-
-            .catch((erro) => {
-                //window.alert('não foi')
-                console.log(erro.response.data)
-            })
+        cleanFields();
     }
 
 
     return (
 
         <div>
-
+            <a href='/'>Home</a>
             <p>Formulário de Inscrição</p>
-            <form>
+            
+            <form onSubmit={submitForm}>
                 <input
-                    name={'nome'}
-                    value={nome}
-                    placeholder='Nome'
-                    onChange={onChangeNome}
+                    name='name'
+                    value={form.name}
+                    placeholder={'Nome'}
+                    onChange={onChange}
                     required
                 />
                 <input
-                    name={'idade'}
-                    value={idade}
+                    name='age'
+                    value={form.age}
                     placeholder='Idade'
-                    onChange={onChangeIdade}
+                    onChange={onChange}
                     required
                     type='number'
                 />
                 <input
-                    name={'motivo'}
-                    value={motivo}
+                    name='applicationText'
+                    value={form.applicationText}
                     placeholder='Motivo'
-                    onChange={onChangeMotivo}
+                    onChange={onChange}
                     required
                 />
                 <input
-                    name={'profissao'}
-                    value={profissao}
+                    name='profission'
+                    value={form.profission}
                     placeholder='Profissão'
-                    onChange={onChangeProfissao}
+                    onChange={onChange}
                     required
                 />
                 <input
-                    name={'pais'}
-                    value={pais}
+                    name='country'
+                    value={form.country}
                     placeholder='País'
-                    onChange={onChangePais}
+                    onChange={onChange}
                     required
                 />
 
-                <button onClick={submitForm}>Enviar</button>
+                <button>Enviar</button>
             </form>
-
+            
         </div>
 
     )

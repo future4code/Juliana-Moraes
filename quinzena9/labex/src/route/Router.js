@@ -3,7 +3,7 @@ import { ListTripsPage } from '../pages/ListTripsPage.js'
 import { ApplicationFormPage } from '../pages/ApplicationFormPage.js'
 import { AdminHomePage } from '../pages/AdminHomePage.js'
 import { TripDetalisPage } from '../pages/TripDetalisPage.js'
-import { CreateTripPage } from '../pages/CreateTripPage.js'
+import { CreateTripPage } from '../pages/CreateTripPage'
 import { LoginPage } from '../pages/LoginPage.js'
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
@@ -35,7 +35,7 @@ export const Router = () => {
                     <TripDetalisPage />
                 </Route>
 
-                <Route exact path={"/admin/trips/create"}>
+                <Route exact path={"/admin/trips/createtrip"}>
                     <CreateTripPage />
                 </Route>
 
