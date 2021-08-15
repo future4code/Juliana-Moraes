@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import App from '../App.js'
 
 const DadosGerais = styled.div`
+    
     display:flex;
     justify-content: center;
     align-items: center;
