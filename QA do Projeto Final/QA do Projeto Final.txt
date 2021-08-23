@@ -1,0 +1,21 @@
+
+BUG 1:
+O que deveria acontecer: O componente de pedido deve ficar na tela enquanto após o pedido ser realizado pelo usuário.
+O que acontece: O componente esta instavel e some.
+
+
+BUG 2:
+O que deveria acontecer: O filtro deve mostrar a categoria.
+O que acontece: Mostra categorias repetidas
+
+BUG 3:
+O que deveria acontecer: O carrinho deve se manter com os produtos mesmo que o app seja fechado.
+O que acontece: O carrinho é resetado ao atualizar a página.
+
+BUG 4:
+O que deveria acontecer: Somente deveria adicionar um produto com a quantidade informada
+O que acontece: É possivel adicionar um produto sem informar a quantidade.
+
+BUG 5:
+O que deveria acontecer: Ao clicar na home deveria aparecer todos os restaurantes.
+O que acontece: Não tem nenhuma ação
